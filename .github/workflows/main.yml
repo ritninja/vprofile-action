@@ -29,10 +29,10 @@ jobs:
 
             - name: SonarQube Scan
               run: sonar-scanner
-                 -Dsonar.host=${{ secrets.SONAR_URL }}
-                 -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-                 -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
-                 -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
+                 -Dsonar.host=https://sonarcloud.io
+                 -Dsonar.login=d9f43ad0a365ea053b5f01cdbba47987a2e3c52b
+                 -Dsonar.organization=ritninja-actions24
+                 -Dsonar.projectKey=ritninja-actions24_vproapp
                  -Dsonar.sources=src/
                  -Dsonar.junit.reportsPath=target/surefire-reports/
                  -Dsonar.jacoco.reportsPath=target/jacoco.exec
@@ -44,5 +44,5 @@ jobs:
               uses: sonarsource/sonarqube-quality-gate-action@master
               timeout-minutes: 5
               env:
-                SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-                SONAR_HOST_URL: ${{ secrets.SONAR_URL }}
+                SONAR_TOKEN: d9f43ad0a365ea053b5f01cdbba47987a2e3c52b
+                SONAR_HOST_URL: https://sonarcloud.io
